@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Gruppo", "sans-serif";
+}
+
+.login-label {
+  @apply text-end text-secondaryBlack dark:text-secondary;
+}
+.login-input {
+  @apply col-span-3 h-[2rem] rounded-sm bg-secondary dark:bg-secondaryBlack px-2 text-primaryBlack dark:text-primary active:bg-secondary dark:active:bg-secondaryBlack !important;
+}
+
+.dropdown-link {
+  @apply p-3 text-[1rem] flex
+}
+
+.loader {
+  width: 45px;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 50%;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+
