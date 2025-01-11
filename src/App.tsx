@@ -6,7 +6,6 @@ import Login from "./ui/Login.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 import { Provider as ReduxProvider } from "react-redux";
 import { store } from "./lib/redux/store.ts";
-import Loader from "./components/Loader.tsx";
 import { useEffect } from "react";
 import {
   addLocalStorageData,
@@ -15,7 +14,7 @@ import {
 import UserSettings from "./ui/User.tsx";
 import { updateUser } from "./lib/redux/slices/user.ts";
 import { ThemeProvider } from "./context/DarkMode.tsx";
-// import Error from "./components/Error.tsx";
+import ErrorComponent from "./components/Error.tsx";
 
 const route = createBrowserRouter([
   {
@@ -34,7 +33,7 @@ const route = createBrowserRouter([
           },
           {
             path: "*",
-            element: <Loader />,
+            element: <ErrorComponent />,
           },
         ],
       },
@@ -43,7 +42,10 @@ const route = createBrowserRouter([
         element: <Login />,
       },
     ],
-    // errorElement: <Error />,
+  },
+  {
+    path: "*",
+    errorElement: <ErrorComponent />,
   },
 ]);
 

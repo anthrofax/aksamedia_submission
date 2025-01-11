@@ -43,7 +43,9 @@ function Login() {
               <h1>Workify</h1>
             </span>
           </Link>
-          <p className="font-bold text-primaryBlack dark:text-primary">Masukkan data akunmu disini</p>
+          <p className="font-bold text-primaryBlack dark:text-primary">
+            Masukkan data akunmu disini
+          </p>
         </div>
 
         <form
@@ -57,6 +59,7 @@ function Login() {
             type="email"
             name="email"
             className="login-input"
+            defaultValue={"afridhoikhsan@gmail.com"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -67,6 +70,7 @@ function Login() {
           <input
             type="password"
             name="password"
+            defaultValue={"123123"}
             className="login-input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
